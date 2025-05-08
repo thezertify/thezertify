@@ -12,12 +12,12 @@
   <!-- Background Elements -->
   <div id="video-background">
     <video autoplay muted loop id="myVideo"> <!-- Video background -->
-      <source src="assets/videos/51ce0ddd-df45-4017-aa3d-4ec0963dc2f9.mp4" type="video/mp4">
+      <source src="assets/back/Drake - NOKIA (Official Music Video).mp4" type="video/mp4">
       Your browser does not support HTML5 video.
     </video>
     <div id="audio-background">
       <audio autoplay loop id="myAudio"> <!-- Audio background -->
-        <source src="assets/audio/SpotiDownloader.com - Feels Like - Ceru.mp3" type="audio/mpeg">
+        <source src="assets/music/ea3febe5-c385-4625-b6b7-cda368c5e3ce.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
     </div>
@@ -70,6 +70,50 @@ audio.volume = this.value;
 });
 </script>
 <!-- ============================================= End Of music control ============================================= -->
+
+<!-- Mouse move trigger -->
+<script>
+  function playAudioOnMouseMove() {
+    const audio = document.getElementById('myAudio');
+    audio.play().catch(err => console.warn("MouseMove: Autoplay blocked", err));
+    document.removeEventListener('mousemove', playAudioOnMouseMove);
+  }
+
+  document.addEventListener('mousemove', playAudioOnMouseMove);
+</script>
+
+<!-- Scroll trigger -->
+<script>
+  function playAudioOnScroll() {
+    const audio = document.getElementById('myAudio');
+    audio.play().catch(err => console.warn("Scroll: Autoplay blocked", err));
+    document.removeEventListener('scroll', playAudioOnScroll);
+  }
+
+  document.addEventListener('scroll', playAudioOnScroll);
+</script>
+
+<!-- Touchstart trigger -->
+<script>
+  function playAudioOnTouch() {
+    const audio = document.getElementById('myAudio');
+    audio.play().catch(err => console.warn("Touchstart: Autoplay blocked", err));
+    document.removeEventListener('touchstart', playAudioOnTouch);
+  }
+
+  document.addEventListener('touchstart', playAudioOnTouch);
+</script>
+
+<!-- Click trigger -->
+<script>
+  function playAudioOnClick() {
+    const audio = document.getElementById('myAudio');
+    audio.play().catch(err => console.warn("Click: Autoplay blocked", err));
+    document.removeEventListener('click', playAudioOnClick);
+  }
+
+  document.addEventListener('click', playAudioOnClick);
+</script>
 
 
 </body>
